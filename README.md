@@ -4,7 +4,7 @@ Hashes and checks plaintext passwords against known password leaks. This can be 
 
 ## Installation
 
-```
+```javascript
   // const {checkPassword, humanReadableCheck} = require("@syntaxiscs/password-leak-check"); use this way if you don't want to call leakCheck.checkPassword();
   const leakCheck = require("@syntaxiscs/password-leak-check");
 ```
@@ -14,8 +14,10 @@ Hashes and checks plaintext passwords against known password leaks. This can be 
 This package includes 2 methods.
 
 ### checkPassword
+
 Main method, if you are using package in production use this method.
-```
+
+```javascript
   const password = "Password1!" // (Placeholder) password from wherever (input field, etc, etc)
   
   leakCheck.checkPassword(password).then(response => {
@@ -49,8 +51,10 @@ Main method, if you are using package in production use this method.
 ```
 
 ### humanReadableCheck
+
 This is used for testing purposes only :) Not indended for production as it only returns strings and logs them to the console and not objects but functionally works the same as the main method
-```
+
+```javascript
   leakCheck.humanReadableCheck(password).then(response => {
     // returns a string but it is logged to the console so no need to do anything here
     
